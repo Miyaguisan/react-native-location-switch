@@ -21,7 +21,7 @@ RCT_REMAP_METHOD(enableLocationService,
         NSURL *serviceURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
         
         if ([[UIApplication sharedApplication] canOpenURL:serviceURL]) {
-            [[UIApplication sharedApplication] openURL:serviceURL];
+            [[UIApplication sharedApplication] openURL:serviceURL options:@{} completionHandler:^(BOOL success) {}];
         }
         else {
             errorCallback(@[[NSNull null]]);
